@@ -12,5 +12,5 @@ He probado varias soluciones hasta dar con la que me ha resultado más efectiva.
  - ***MOVING:*** Movimiento normal del robot. Realiza espirales hasta que choca la primera vez, después, debido a los obstáculos, realiza parábolas.
  - ***BUMP:*** Pone a cero tanto la velocidad lineal como la angular ante un choque.
  - ***SPINNING:*** Gira durante un número aleatorio de ticks, al lado contrario que gira el estado MOVING.
- - 
+   
 La mejor lógica que he encontrado al final es que haga una espiral hasta el primer choque, luego gira al lado contrario un número aleatorio de ticks y vuelve a moverse otra vez haciendo una parábola hacia el lado contrario. Con este bucle, dejando fija la velocidad angular y aumentando periodicamente la lineal (hasta un límite) he conseguido una máxima ejecución de 101.96% de recorrido del mapa.
