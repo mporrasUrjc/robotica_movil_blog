@@ -1,5 +1,9 @@
 # PRÁCTICA 1: VACUUM CLEANER 
 
+## ÍNDICE
+1. [Objetivos de la práctica](#objetivos-de-la-práctica)
+2. [Solución encontrada](#solución-encontrada)
+3. [Problemas encontrados](#problemas-encontrados)
 ## Objetivos de la práctica
 
 Como objetivo de esta práctica, debemos programar una aspiradora de gama baja para que recorra, de manera autónoma, la mayor parte del mapa posible. La lógica que debe seguir la aspiradora es girar de manera pseudo-aleatoria cuando choque con un obstáculo/pared.
