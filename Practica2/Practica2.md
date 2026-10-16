@@ -2,8 +2,8 @@
 
 ## ÍNDICE
 1. [Objetivos de la práctica](#objetivos-de-la-práctica)
-2. [Solución encontrada](#solución-encontrada)
-3. [Problemas encontrados](#problemas-encontrados)
+2. [Desarrollo de la práctica](#desarrollo-de-la-solución)
+   
 ## Objetivos de la práctica
 
 El problema propuesto para esta práctica es el siguiente:
@@ -35,12 +35,23 @@ En cuanto a la parte de la velocidad lineal, he probado a mantenerla dentro de u
 
 Ante la posibilidad de que el coche pierda la línea, he probado a implementar una máquina de estados sencilla con un estado de recuperación que buscaba la línea. Sin embargo, al notar que con la máquina de estados el coche tardaba más en reaccionar y era más propenso a oscilar decidí no seguir con esa implementación. Igualmente, si el coche pierde el centroide, se coge como referencia el último error calculado y se le hace girar en la dirección contraria hasta recuperar la línea.
 
-A continuación dejo un vídeo demostración. Ha sido una ejecución de 19 minutos de duración y ha conseguido un 84% de puntuación.
+A medida que he ido probando velocidades y distintos valores para las constantes, he tenido que decidir entre hacer que el coche complete la vuelta más rápido y perder estabilidad frente a las curvas y las oscilaciones, o que lo complete a una velocidad más controlada y reducir las oscilaciones. He encontrado cierto equilibrio, pero dado el enfoque de la práctica he elegido la segunda opción, reducir un poco la velocidad. De todas formas, dejo también un vídeo del mismo PID a una velocidad superior a la que he acabado usando en el código para que se aprecie que lo soporta sin oscilar de manera exagerada.
 
-[Vídeo demo](https://drive.google.com/file/d/1t12WhqmM5z1jBowxHswB1Vp1tjMVC7yG/view?usp=sharing)
+[Circuito simple lento](https://drive.google.com/file/d/18jxK0jh_yv9dKil-IVgbkEVpzUwlq4VG/view?usp=sharing)
 
-## Problemas encontrados
+[Circuito simple rápido](https://drive.google.com/file/d/1Rw6sQ4zeJ8VyP5RnhI-bCLReJi8wwffg/view?usp=sharing)
 
-La primera solución que encontré para generar un ángulo de giro aleatorio fue con la función *sleep*, pero al perder la reactividad durante el tiempo que dure el giro no era la más óptima. Al final he optado por contar un número de ticks aleatorios.
+[Nürburgring](https://drive.google.com/file/d/10vl3NPsPPYNYht3BtATqZT0iPtNgsXGv/view?usp=sharing)
 
-Otro problema con el que me he encontrado ha sido el aumento periódico de la velocidad lineal, ya que llegaba a una cifra que hacía que la aspiradora se desplazara de manera completamente lineal cuando yo buscaba una parábola. La solución que he encontrado a este problema ha sido definir una velocidad máxima y una mínima. Una vez el bucle llega a la máxima, resetea el valor al mínimo y comienza a incrementarla de nuevo.
+
+En la primera curva del circuito de Nürburgring, al ser tan cerrada, el coche pierde de vista momentáneamente la línea. He probado con gran variedad de velocidades y valores, pero es demasiado cerrada para que corrija el coche a una velocidad que no considere demasiado lenta para el resto del circuito. He decidido dejarlo así porque considero que también me sirve también como referencia para demostrar la robustez del sistema y el funcionamiento del mecanismo de recuperación.
+
+Al final los tiempos han sido los siguientes.
+
+| Circuito | Tiempo (s)|
+|---|---|
+| `Simple lento` | 66.17 |
+| `Simple rápido` | 47.84 | 
+| `Montecarlo` | 222.90 |
+| `Montmelo` | 115.36 |  
+| `Nürburgring` | 99.69 | 
