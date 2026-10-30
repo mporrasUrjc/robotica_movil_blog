@@ -19,7 +19,8 @@ He probado varias soluciones hasta dar con la que me ha resultado más efectiva.
    
 La mejor lógica que he encontrado al final es que haga una espiral hasta el primer choque, luego gira al lado contrario un número aleatorio de ticks y vuelve a moverse otra vez haciendo una parábola hacia el lado contrario. Con este bucle, dejando fija la velocidad angular y aumentando periodicamente la lineal (hasta un límite) he conseguido una máxima ejecución de 103.17% de recorrido del mapa.
 
-<img src="src/Max_score.png" width="800">
+<img width="314" height="189" alt="Picture" src="https://github.com/user-attachments/assets/fc25cfb7-a007-401c-93f3-b1c09b92228f" />
+
 
 A continuación dejo un vídeo demostración. Ha sido una ejecución de 19 minutos de duración y ha conseguido un 84% de puntuación.
 
