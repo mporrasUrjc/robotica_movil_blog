@@ -69,7 +69,7 @@ Los pasos que se repiten en cada iteración son:
 
 ### 2.5 Control de movimiento
 
-He probado a incorporar el control con un `controlador (PD)` para calcular la velocidad angular en función del ángulo deseado. Sin embargo, tras varias pruebas, he llegado a la conclusión de que no es necesario, ya que puede llegar incluso a reducir la reactividad del sistema. Al final el coche presenta oscilaciones, primordialmente en rectas, mientras que en curvas y a la hora de esquivar obstáculos no se observan prácticamente ninguna.
+He probado a incorporar el control con un `controlador (PD)` para calcular la velocidad angular en función del ángulo deseado. Sin embargo, tras varias pruebas, he llegado a la conclusión de que no es necesario, ya que puede llegar incluso a reducir la reactividad del sistema. Al final he implementado únicamente un `controlador (P)`.
 
 También he añadido una representación gráfica de los vectores usados por el algoritmo y los distintos checkpoints. Esto permite visualizar y depurar el comportamiento del sistema y el comportamiento del VFF.
 
@@ -81,7 +81,7 @@ Para evaluar el rendimiento del algortimo, he incorporado un temporizador que mi
 
 El tiempo se muestra por terminal mediante una traza únicamente cuando se alcanza un nuevo `checkpoint`. De esta formar, evita generar una cantidad excesiva de mensajes durante la ejecución, mejora la legibilidad de estos, reduce las operaciones de salida por terminal y minimiza su posible impacto en la latencia del controlador.
 
-Tras realizar diferentes pruebas, el mejor tiempo obtenido desde el principio de la ejecución hasta alcanzar el último `checkpoint` ha sido de `55,01 segundos`. Para realizar una pequeña comparativa, con el controlador PD, mi tiempo máximo fue `129,60 segundos` y en alguna que otra prueba se seguía chocando.
+Tras realizar diferentes pruebas, el mejor tiempo obtenido desde el principio de la ejecución hasta alcanzar el último `checkpoint` ha sido de `55,01 segundos`. 
 
 ### 3. Resultado final
 
